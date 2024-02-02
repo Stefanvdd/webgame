@@ -1,0 +1,148 @@
+/* Algemene stijlinstellingen voor de pagina */
+html {
+    width: 100%;
+    height: 100%;
+    background-image: url("/159Z_2107.w026.n002.628B.p1.628.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden; /* Verbergt overloop om scrollbars te voorkomen */
+}
+
+/* Stijl voor de .game container */
+.game {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%); /* Centreert de game container */
+}
+
+/* Stijl voor de bedieningselementen */
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Stijl voor knoppen */
+button {
+    background: #282A3A;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+/* Stijl voor uitgeschakelde knoppen */
+.disabled {
+    color: #757575;
+}
+
+/* Stijl voor statistieken */
+.stats {
+    color: #FFF;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+/* Stijl voor het bordcontainer */
+.board-container {
+    position: relative;
+}
+
+/* Stijl voor het bord en win-melding */
+.board,
+.win {
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: linear-gradient(135deg,  #03001e 0%,#7303c0 0%,#3700ff 50%, #7303c0 100%);
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+/* Stijl voor het bord */
+.board {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+
+/* Stijl voor het omgedraaide bord */
+.board-container.flipped .board {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+/* Stijl voor het omgedraaide win-melding */
+.board-container.flipped .win {
+    transform: rotateY(0) rotateZ(0);
+}
+
+/* Stijl voor kaarten */
+.card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+/* Stijl voor de voorkant en achterkant van kaarten */
+.card-front,
+.card-back {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #282A3A;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+/* Stijl voor de achterkant van kaarten */
+.card-back {
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 28pt;
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    background: #FDF8E6;
+}
+
+/* Stijl voor omgedraaide voorkant van kaarten */
+.card.flipped .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+/* Stijl voor omgedraaide achterkant van kaarten */
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+}
+
+/* Stijl voor de win-melding */
+.win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #FDF8E6;
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+/* Stijl voor de tekst in de win-melding */
+.win-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21pt;
+    color: #282A3A;
+}
+
+/* Stijl voor gemarkeerde tekst */
+.highlight {
+    color: #7303c0;
+}
